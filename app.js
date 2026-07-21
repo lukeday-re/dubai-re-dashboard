@@ -113,6 +113,15 @@
       grouped[x.date].push(x.item);
     });
 
+    // Within each day, order articles most-recent to oldest by published_date.
+    // Dates are ISO-ish strings, so descending string compare = newest first;
+    // less-specific dates (e.g. "2026-07" or "2026") naturally fall below exact days.
+    order.forEach(function (dateStr) {
+      grouped[dateStr].sort(function (a, b) {
+        return (b.published_date || "").localeCompare(a.published_date || "");
+      });
+    });
+
     if (order.length === 0) {
       feed.innerHTML = '<div class="empty">No stories match this filter yet.</div>';
       return;
