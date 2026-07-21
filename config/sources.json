@@ -1,0 +1,68 @@
+{
+  "categories": {
+    "developer_launch": {
+      "label": "Developer Launches",
+      "color": "#2563eb",
+      "developers": ["Emaar", "DAMAC", "Nakheel", "Sobha Realty", "Aldar", "Binghatti", "Danube Properties", "Azizi Developments", "Ellington Properties", "Meraas", "Dubai Properties", "Omniyat", "Deyaar", "Union Properties"],
+      "queries": [
+        "Emaar new project launch Dubai",
+        "DAMAC new launch Dubai",
+        "Nakheel new project Dubai",
+        "Sobha Realty launch Dubai",
+        "Binghatti new project Dubai",
+        "Danube Properties launch Dubai",
+        "Azizi Developments new launch Dubai",
+        "Dubai off-plan project launch this week"
+      ]
+    },
+    "infrastructure": {
+      "label": "Infrastructure & Regulatory",
+      "color": "#059669",
+      "queries": [
+        "Dubai Land Department DLD announcement",
+        "RERA Dubai new regulation",
+        "RTA Dubai new project road metro",
+        "Dubai 2040 master plan update",
+        "Dubai metro expansion news",
+        "Dubai real estate law update"
+      ]
+    },
+    "market_data": {
+      "label": "Market Data",
+      "color": "#d97706",
+      "queries": [
+        "Dubai real estate transaction volume DLD data",
+        "Dubai property price index report",
+        "Property Finder Dubai market report",
+        "CBRE Dubai residential market report",
+        "Knight Frank Dubai property report",
+        "ValuStrat Dubai price index"
+      ]
+    },
+    "abu_dhabi": {
+      "label": "Abu Dhabi",
+      "color": "#7c3aed",
+      "developers": ["Aldar", "Modon", "ADQ", "Bloom Holding", "Reportage Properties"],
+      "queries": [
+        "Aldar new project launch Abu Dhabi",
+        "Abu Dhabi real estate market news",
+        "Modon Abu Dhabi development",
+        "Abu Dhabi Department of Municipalities and Transport real estate"
+      ]
+    },
+    "market_drivers": {
+      "label": "Market Drivers",
+      "color": "#db2777",
+      "queries": [
+        "UAE Central Bank interest rate real estate impact",
+        "UAE golden visa real estate policy update",
+        "Dubai population growth tourism 2026",
+        "UAE mortgage rate news"
+      ]
+    }
+  },
+  "preferred_sources": ["Gulf News", "The National", "Khaleej Times", "Arabian Business", "Zawya", "Construction Week", "Property Finder", "Bayut", "dubailand.gov.ae", "rta.ae"],
+  "dedupe_lookback_days": 5,
+  "target_items_per_day": [8, 15],
+  "top_picks_count": [2, 3]
+}

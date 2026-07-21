@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubai & Abu Dhabi Real Estate — Daily Feed</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Dubai &amp; Abu Dhabi Real Estate</h1>
+  <div class="updated" id="updated">Loading...</div>
+  <input type="text" class="search" id="search" placeholder="Search headlines, developers, areas...">
+  <div class="filters">
+    <span class="pill active" data-cat="all">All</span>
+    <span class="pill" data-cat="developer_launch">Developer Launches</span>
+    <span class="pill" data-cat="infrastructure">Infrastructure</span>
+    <span class="pill" data-cat="market_data">Market Data</span>
+    <span class="pill" data-cat="abu_dhabi">Abu Dhabi</span>
+    <span class="pill" data-cat="market_drivers">Market Drivers</span>
+  </div>
+</header>
+<main>
+  <div class="top-picks" id="top-picks" style="display:none"></div>
+  <div id="feed" class="status">Loading feed...</div>
+</main>
+
+<script src="data/index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
