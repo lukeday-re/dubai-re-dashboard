@@ -63,6 +63,6 @@
   },
   "preferred_sources": ["Gulf News", "The National", "Khaleej Times", "Arabian Business", "Zawya", "Construction Week", "Property Finder", "Bayut", "dubailand.gov.ae", "rta.ae"],
   "dedupe_lookback_days": 5,
-  "target_items_per_day": [8, 15],
-  "top_picks_count": [2, 3]
+  "target_items_per_day": [18, 24],
+  "top_picks_count": [3, 4]
 }
