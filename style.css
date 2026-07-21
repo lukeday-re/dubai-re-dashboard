@@ -27,9 +27,34 @@ header {
   padding: 14px 16px;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 header h1 {
   margin: 0 0 2px 0;
   font-size: 18px;
+}
+
+.refresh-btn {
+  flex: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #1a1400;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .updated {

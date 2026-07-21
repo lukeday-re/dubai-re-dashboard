@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Dubai & Abu Dhabi Real Estate — Daily Feed</title>
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
@@ -15,7 +18,10 @@
 </head>
 <body>
 <header>
-  <h1>Dubai &amp; Abu Dhabi Real Estate</h1>
+  <div class="header-row">
+    <h1>Dubai &amp; Abu Dhabi Real Estate</h1>
+    <button id="refresh" class="refresh-btn" type="button">🔄 Refresh</button>
+  </div>
   <div class="updated" id="updated">Loading...</div>
   <input type="text" class="search" id="search" placeholder="Search headlines, developers, areas...">
   <div class="filters">
@@ -32,7 +38,6 @@
   <div id="feed" class="status">Loading feed...</div>
 </main>
 
-<script src="data/index.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

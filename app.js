@@ -32,10 +32,21 @@
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement("script");
-      s.src = src;
+      // Cache-bust every load so the phone/home-screen app always gets the
+      // latest daily data instead of a stale cached copy.
+      s.src = src + (src.indexOf("?") > -1 ? "&" : "?") + "t=" + Date.now();
       s.onload = resolve;
       s.onerror = function () { reject(new Error("missing " + src)); };
       document.head.appendChild(s);
+    });
+  }
+
+  // Load the date manifest (data/index.js) fresh, then populate state.dates.
+  function loadManifest() {
+    return loadScript("data/index.js").then(function () {
+      state.dates = (typeof window.RE_DATES !== "undefined") ? window.RE_DATES.slice() : [];
+    }).catch(function (e) {
+      console.warn(e.message);
     });
   }
 
@@ -201,20 +212,43 @@
       state.searchTerm = e.target.value;
       renderFeed();
     });
+    var refreshBtn = document.getElementById("refresh");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", function () { refreshData(refreshBtn); });
+    }
+  }
+
+  // Re-fetch the manifest and data from scratch (cache-busted) without a full
+  // page reload — used by the Refresh button, since standalone/home-screen mode
+  // hides the browser's own reload control.
+  function refreshData(btn) {
+    if (btn) { btn.disabled = true; btn.textContent = "Refreshing…"; }
+    window.RE_DATA = {};
+    state.loadedCount = 0;
+    state.allLoadedItems = [];
+    return loadDataAndRender().then(function () {
+      if (btn) { btn.disabled = false; btn.textContent = "🔄 Refresh"; }
+    });
+  }
+
+  function loadDataAndRender() {
+    return loadManifest().then(function () {
+      if (state.dates.length === 0) {
+        document.getElementById("feed").innerHTML = '<div class="empty">No data files found yet. Run a collection pass to populate data/.</div>';
+        document.getElementById("updated").textContent = "No data yet";
+        return;
+      }
+      setUpdatedLabel();
+      return loadNextBatch().then(function () {
+        renderTopPicks();
+        renderFeed();
+      });
+    });
   }
 
   function init() {
     wireControls();
-    if (state.dates.length === 0) {
-      document.getElementById("feed").innerHTML = '<div class="empty">No data files found yet. Run a collection pass to populate data/.</div>';
-      document.getElementById("updated").textContent = "No data yet";
-      return;
-    }
-    setUpdatedLabel();
-    loadNextBatch().then(function () {
-      renderTopPicks();
-      renderFeed();
-    });
+    loadDataAndRender();
   }
 
   document.addEventListener("DOMContentLoaded", init);
