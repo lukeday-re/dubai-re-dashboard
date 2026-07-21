@@ -70,7 +70,30 @@
     });
   }
 
+  // Parse the loosely-formatted published_date into a Date.
+  // "YYYY-MM-DD" -> that day; "YYYY-MM" -> last day of that month;
+  // "YYYY" -> Dec 31 of that year; anything unrecognised -> null (kept, not hidden).
+  function parseItemDate(s) {
+    s = String(s || "").trim();
+    var m;
+    if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})/))) return new Date(+m[1], +m[2] - 1, +m[3]);
+    if ((m = s.match(/^(\d{4})-(\d{2})$/))) return new Date(+m[1], +m[2], 0);
+    if ((m = s.match(/^(\d{4})$/))) return new Date(+m[1], 11, 31);
+    return null;
+  }
+
+  // Hide anything older than 3 months so the feed stays fresh for content.
+  function isFresh(item) {
+    var d = parseItemDate(item.published_date);
+    if (!d) return true; // unparseable date -> don't hide it
+    var cutoff = new Date();
+    cutoff.setHours(0, 0, 0, 0);
+    cutoff.setMonth(cutoff.getMonth() - 3);
+    return d >= cutoff;
+  }
+
   function itemMatchesFilter(item) {
+    if (!isFresh(item)) return false;
     if (state.activeFilter !== "all" && item.category !== state.activeFilter) return false;
     if (state.searchTerm) {
       var hay = (item.headline + " " + item.summary + " " + (item.developer_tags || []).join(" ") + " " + (item.location_tags || []).join(" ")).toLowerCase();
