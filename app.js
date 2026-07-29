@@ -124,9 +124,11 @@
     container.style.display = "block";
     container.innerHTML = "<h2>Today's Top Video Picks</h2>" + picks.map(function (x) {
       var it = x.item;
-      return '<div class="pick-card">' +
+      var hasScript = !!(it.script || (it.bullets && it.bullets.length));
+      return '<div class="pick-card' + (hasScript ? ' clickable' : '') + '"' + (hasScript ? ' data-item-id="' + escapeHtml(it.id) + '"' : '') + '>' +
         '<div class="pick-headline">' + escapeHtml(it.headline) + "</div>" +
         (it.hook_angle ? '<div class="hook">🎬 ' + escapeHtml(it.hook_angle) + "</div>" : "") +
+        (hasScript ? '<div class="tap-cue">👉 Tap for bullet points &amp; 60-sec script</div>' : "") +
         "</div>";
     }).join("");
   }
@@ -135,6 +137,93 @@
     return String(s || "").replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
+  }
+
+  function findItemById(id) {
+    for (var i = 0; i < state.allLoadedItems.length; i++) {
+      if (state.allLoadedItems[i].item.id === id) return state.allLoadedItems[i].item;
+    }
+    return null;
+  }
+
+  // Copy plain text to the clipboard, with a fallback for older browsers, and
+  // give quick "Copied!" feedback on the button that was pressed.
+  function copyText(text, btn) {
+    function done() {
+      if (!btn) return;
+      var original = btn.getAttribute("data-label") || btn.textContent;
+      btn.setAttribute("data-label", original);
+      btn.textContent = "✓ Copied!";
+      btn.classList.add("copied");
+      setTimeout(function () { btn.textContent = original; btn.classList.remove("copied"); }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+    } else {
+      fallback();
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  }
+
+  function bulletsToText(bullets) {
+    return (bullets || []).map(function (b) { return "• " + b; }).join("\n");
+  }
+
+  function openDetail(item) {
+    var content = document.getElementById("detail-content");
+    var meta = CATEGORY_META[item.category] || { label: item.category, color: "#555" };
+    var html = "";
+    html += '<span class="badge" style="background:' + meta.color + '">' + meta.label + "</span>";
+    html += '<h2 class="detail-headline">' + escapeHtml(item.headline) + "</h2>";
+    html += '<div class="detail-meta">' + escapeHtml(item.source_name || "") + (item.published_date ? " · " + escapeHtml(item.published_date) : "") + "</div>";
+
+    if (item.bullets && item.bullets.length) {
+      html += '<section class="detail-section">' +
+        '<div class="detail-section-head"><h3>📌 Key points</h3>' +
+        '<button class="copy-btn" data-copy="bullets">Copy</button></div>' +
+        '<ul class="detail-bullets">' +
+        item.bullets.map(function (b) { return "<li>" + escapeHtml(b) + "</li>"; }).join("") +
+        "</ul></section>";
+    }
+
+    if (item.script) {
+      html += '<section class="detail-section">' +
+        '<div class="detail-section-head"><h3>🎬 60-second script</h3>' +
+        '<button class="copy-btn" data-copy="script">Copy</button></div>' +
+        '<p class="detail-script">' + escapeHtml(item.script) + "</p></section>";
+    }
+
+    if (item.source_url) {
+      html += '<a class="detail-article-link" href="' + escapeHtml(item.source_url) + '" target="_blank" rel="noopener">🔗 Read the full article →</a>';
+    }
+
+    content.innerHTML = html;
+
+    // Wire the copy buttons to the actual (unescaped) text.
+    var bulletBtn = content.querySelector('[data-copy="bullets"]');
+    if (bulletBtn) bulletBtn.addEventListener("click", function () { copyText(bulletsToText(item.bullets), bulletBtn); });
+    var scriptBtn = content.querySelector('[data-copy="script"]');
+    if (scriptBtn) scriptBtn.addEventListener("click", function () { copyText(item.script, scriptBtn); });
+
+    var overlay = document.getElementById("detail-overlay");
+    overlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    content.scrollTop = 0;
+  }
+
+  function closeDetail() {
+    document.getElementById("detail-overlay").style.display = "none";
+    document.body.style.overflow = "";
   }
 
   function renderFeed() {
@@ -166,11 +255,13 @@
       html += '<div class="day-divider">' + fmtDayLabel(dateStr) + "</div>";
       grouped[dateStr].forEach(function (item) {
         var meta = CATEGORY_META[item.category] || { label: item.category, color: "#555" };
-        html += '<div class="card">' +
+        var hasScript = !!(item.script || (item.bullets && item.bullets.length));
+        html += '<div class="card' + (hasScript ? ' clickable' : '') + '"' + (hasScript ? ' data-item-id="' + escapeHtml(item.id) + '"' : '') + '>' +
           '<span class="badge" style="background:' + meta.color + '">' + meta.label + "</span>" +
           '<div class="headline">' + escapeHtml(item.headline) + "</div>" +
           '<div class="summary">' + escapeHtml(item.summary) + "</div>" +
           (item.hook_angle ? '<div class="hook">🎬 ' + escapeHtml(item.hook_angle) + "</div>" : "") +
+          (hasScript ? '<div class="tap-cue">👉 Tap for bullet points &amp; 60-sec script</div>' : "") +
           '<div class="meta">' +
           (item.source_url ? '<a href="' + escapeHtml(item.source_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.source_name || "Source") + "</a>" : '<span>' + escapeHtml(item.source_name || "") + "</span>") +
           '<span>' + escapeHtml(item.published_date || "") + "</span>" +
@@ -216,6 +307,27 @@
     if (refreshBtn) {
       refreshBtn.addEventListener("click", function () { refreshData(refreshBtn); });
     }
+
+    // Delegated clicks: open the detail view for any card carrying a data-item-id
+    // (top picks and any feed item that has a script). Ignore clicks on links.
+    function cardClickHandler(e) {
+      if (e.target.closest("a")) return;
+      var card = e.target.closest("[data-item-id]");
+      if (!card) return;
+      var item = findItemById(card.getAttribute("data-item-id"));
+      if (item) openDetail(item);
+    }
+    document.getElementById("top-picks").addEventListener("click", cardClickHandler);
+    document.getElementById("feed").addEventListener("click", cardClickHandler);
+
+    // Close the detail view: X button, backdrop click, or Escape.
+    document.getElementById("detail-close").addEventListener("click", closeDetail);
+    document.getElementById("detail-overlay").addEventListener("click", function (e) {
+      if (e.target.id === "detail-overlay") closeDetail();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeDetail();
+    });
   }
 
   // Re-fetch the manifest and data from scratch (cache-busted) without a full

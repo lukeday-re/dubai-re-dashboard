@@ -8,6 +8,14 @@ window.RE_DATA["2026-07-26"] = {
       headline: "Dubai racks up AED 9.53bn in a single week's real estate transactions",
       summary: "DLD weekly data published 25 July 2026 shows AED9.53bn across 3,921 transactions — AED6.66bn in sales (2,942 deals, including AED3.48bn/1,992 deals off-plan and AED3.18bn/950 deals of ready property), plus AED2.35bn in mortgages, topped by a AED166.07m luxury apartment in Jumeirah.",
       hook_angle: "'One week, AED 9.53 BILLION' — break down where the money went: off-plan vs ready, sales vs mortgages, on screen.",
+      bullets: [
+        "AED 9.53 BILLION of Dubai property changed hands in ONE week — 3,921 transactions",
+        "Sales were AED 6.66bn across 2,942 deals; mortgages added another AED 2.35bn",
+        "Off-plan (AED 3.48bn) narrowly beat ready homes (AED 3.18bn) — buyers still love buying early",
+        "The week's headline deal: a AED 166.07m off-plan apartment in Jumeirah Second",
+        "This was a 'quiet' mid-summer week — proof Dubai barely takes a holiday"
+      ],
+      script: "Okay, Dubai just did something slightly ridiculous. In ONE week — a supposedly sleepy mid-summer week — the city moved nine-point-five-three BILLION dirhams of real estate. Nearly four thousand transactions. Let that sink in. Sales alone were six-point-six-six billion across almost three thousand deals, plus another two-point-three-five billion in mortgages. And here's the fun part: off-plan actually edged out ready homes — three-point-four-eight billion versus three-point-one-eight — so buyers are STILL happily snapping up things that don't exist yet. Classic Dubai confidence. Oh, and the star of the show? A single off-plan apartment in Jumeirah that went for one hundred and sixty-six MILLION dirhams. In summer. When everyone's supposedly at the beach. So next time someone tells you the Dubai market is 'slowing down', just show them this one week. The city doesn't really do quiet, does it?",
       source_name: "Voice of Emirates",
       source_url: "https://www.voiceofemirates.com/en/business/business-reports/2026/07/25/it-included-billions-in-sales-9-53-billion-dirhams-in-weekly-dubai-real-estate-transactions/",
       published_date: "2026-07-25",
@@ -20,6 +28,15 @@ window.RE_DATA["2026-07-26"] = {
       headline: "IMF flags a UAE property slowdown — but says prices are holding above 2025 levels",
       summary: "Concluding its July 2026 staff visit (assessment published 17 July), the IMF said UAE real estate activity moderated in H1 2026 after years of strong growth, with an uneven impact across segments and locations, while prices stayed at or above 2025 levels. It urged tighter coordination of real estate policy between federal and emirate-level authorities.",
       hook_angle: "'The IMF just gave its verdict on Dubai property' — myth-bust the 'crash' headlines with what the report actually says.",
+      bullets: [
+        "The IMF says UAE property activity cooled in H1 2026 after years of red-hot growth",
+        "BUT prices stayed at or ABOVE 2025 levels — a slowdown in volume, not a price crash",
+        "The impact is uneven — some segments and areas hit harder than others",
+        "Banks' exposure to real estate is 'contained' — no 2008-style risk flashing",
+        "GDP dips slightly this year, with recovery tipped for 2027 as regional tensions ease",
+        "IMF advice: keep policy agile and better coordinated between federal and emirate level"
+      ],
+      script: "Right — the IMF just released its verdict on UAE property, and the headlines screamed 'SLOWDOWN'. So let's actually read it, shall we? Yes, the IMF says activity cooled in the first half of 2026 after years of going absolutely bananas. Fewer deals, calmer pace. BUT — and this is the bit the scary headlines skip — prices stayed at or ABOVE last year's levels. Read that again. That's a slowdown in how MUCH is selling, not a crash in what things are WORTH. Massive difference. They also said the banks' exposure to real estate is 'contained' — translation: no 2008 vibes here, everybody can unclench. The economy dips a touch this year, then bounces back in 2027. So the honest take? The market caught its breath — it didn't fall over. Don't let one scary word do your thinking for you.",
       source_name: "AGBI",
       source_url: "https://www.agbi.com/economy/2026/07/economy-holds-firm-but-imf-warns-of-uae-property-slowdown/",
       published_date: "2026-07-17",
@@ -32,6 +49,14 @@ window.RE_DATA["2026-07-26"] = {
       headline: "AED 166m off-plan apartment sells in Jumeirah — Dubai's priciest deal of a quiet summer week",
       summary: "An off-plan apartment at the Aman Residences Dubai development in Jumeirah Second sold for Dh166.07m (Dh16,572/sqft on a 10,021 sqft unit), reported 22 July 2026 — the same address that produced Dubai's AED422m record H1 sale, underlining how mid-summer doesn't slow ultra-prime demand.",
       hook_angle: "'AED 166 MILLION for an off-plan apartment — in the middle of summer' — walk through why Aman Residences keeps setting records.",
+      bullets: [
+        "One off-plan apartment sold for AED 166.07 million — Dubai's priciest deal of the week",
+        "That's over AED 16,572 per square foot — for a home that isn't even built yet",
+        "It's huge: 10,021 sqft at Aman Residences Dubai in Jumeirah Second",
+        "Aman is an ultra-luxury branded residence — catnip for the world's wealthiest buyers",
+        "Sold mid-summer — ultra-prime Dubai demand doesn't take a holiday"
+      ],
+      script: "Let's talk about the most expensive apartment nobody can move into yet. An off-plan unit at Aman Residences in Jumeirah just sold for one hundred and sixty-six MILLION dirhams. Off-plan. Meaning right now it's... a very expensive idea. Do the maths and that's over sixteen-and-a-half THOUSAND dirhams per square foot, on a ten-thousand-square-foot apartment. That's not an apartment — that's a horizontal mansion. Now, Aman, if you don't know, is the hotel brand billionaires whisper about — total privacy, zen gardens, the lot. So when they stamp their name on Dubai residences, the world's wealthiest basically form an orderly queue. And the kicker? This sold in the middle of summer — the so-called 'quiet season'. Ultra-prime Dubai doesn't do quiet seasons. So if anyone still thinks luxury demand here is cooling, just show them this receipt. One hundred and sixty-six million dirhams. Thank you very much.",
       source_name: "Gulf News",
       source_url: "https://gulfnews.com/amp/story/business/property/dubai-off-plan-luxury-apartment-sells-for-dh166-million-1.500616695",
       published_date: "2026-07-22",
@@ -116,6 +141,15 @@ window.RE_DATA["2026-07-26"] = {
       headline: "Abu Dhabi home prices keep climbing despite regional uncertainty — Saadiyat apartments up 21%",
       summary: "Reported 22 July 2026: Yas and Reem Island apartments rose almost 18% year-on-year, Saadiyat Island apartments jumped 21% to Dh43,100/sqm, and Al Jubail Island villas surged roughly 40%, even as the region absorbed the fallout of the Iran conflict — total H1 transactions hit AED117bn, up 112% year-on-year.",
       hook_angle: "'Abu Dhabi prices are UP double digits despite regional tension' — use Saadiyat's 21% jump to challenge the 'uncertainty' narrative.",
+      bullets: [
+        "Abu Dhabi home prices are SURGING while everyone's watching Dubai",
+        "Saadiyat Island apartments up 21% YoY to AED 43,100/sqm — the emirate's priciest",
+        "Yas & Reem Island apartments up nearly 18%; Al Jubail Island villas up ~40%",
+        "Total H1 transactions hit AED 117 billion — up a staggering 112% year-on-year",
+        "Volumes jumped 61.7% to 16,838 deals — broad-based, not a one-off",
+        "And it's ~10% cheaper than Dubai — the value story fuelling the demand"
+      ],
+      script: "Everyone's staring at Dubai — so let me point you ninety minutes down the road, because Abu Dhabi is quietly having a MOMENT. In the first half of 2026, the capital did one hundred and seventeen BILLION dirhams of property deals. That's up one hundred and twelve percent year on year. Not a typo — it more than DOUBLED. And prices? Saadiyat Island apartments jumped twenty-one percent. Villas on Al Jubail Island? Up around FORTY percent. Yas and Reem, nearly eighteen. All of this while the region's been dealing with some serious geopolitical noise — and Abu Dhabi just... kept climbing. Why? It's about ten percent cheaper than Dubai, it's got golden visas, freelancer programmes, and some seriously good lifestyle upgrades. So if your content is all-Dubai-all-the-time, here's your tip: the capital is where the sneaky-smart money is looking right now. Keep one eye on Abu Dhabi.",
       source_name: "The National",
       source_url: "https://www.thenationalnews.com/business/property/2026/07/22/abu-dhabi-home-prices-surge-in-first-half-of-2026-despite-iran-war-uncertainty/",
       published_date: "2026-07-22",
