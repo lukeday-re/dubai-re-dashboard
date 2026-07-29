@@ -12,10 +12,51 @@
     loadedCount: 0,
     activeFilter: "all",
     searchTerm: "",
+    view: "feed", // "feed" | "created" | "want"
     allLoadedItems: [] // {item, date}
   };
 
   var PAGE_SIZE = 3; // days per "load more"
+
+  // ---- Persistent per-item status (localStorage) --------------------------
+  // Stores which stories the user has made a video on ("created") or wants to
+  // ("want"), plus a full snapshot of the item so its bullets + script survive
+  // forever on this device — even after the story ages out of the fresh feed.
+  var STORE_KEY = "re_status_v1";
+  var store = loadStore();
+
+  function loadStore() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) { return {}; }
+  }
+  function saveStore() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {}
+  }
+  function statusOf(id) {
+    var e = store[id];
+    return { created: !!(e && e.created), want: !!(e && e.want) };
+  }
+  function snapshotItem(it) {
+    return {
+      id: it.id, category: it.category, headline: it.headline, summary: it.summary,
+      hook_angle: it.hook_angle, bullets: it.bullets, script: it.script,
+      source_name: it.source_name, source_url: it.source_url, published_date: it.published_date,
+      developer_tags: it.developer_tags || [], location_tags: it.location_tags || []
+    };
+  }
+  function setStatus(id, key, value, item) {
+    var e = store[id] || {};
+    e[key] = value;
+    e.ts = Date.now();
+    if (item) e.item = snapshotItem(item); // keep the snapshot fresh whenever flagged
+    if (!e.created && !e.want) { delete store[id]; } else { store[id] = e; }
+    saveStore();
+  }
+  function listItems(key) {
+    var arr = [];
+    for (var id in store) { if (store[id][key] && store[id].item) arr.push(store[id]); }
+    arr.sort(function (a, b) { return (b.ts || 0) - (a.ts || 0); });
+    return arr.map(function (e) { return e.item; });
+  }
 
   function fmtDayLabel(dateStr) {
     var today = new Date();
@@ -115,6 +156,7 @@
 
   function renderTopPicks() {
     var container = document.getElementById("top-picks");
+    if (state.view !== "feed") { container.style.display = "none"; return; }
     if (state.allLoadedItems.length === 0) { container.style.display = "none"; return; }
     var mostRecentDate = state.allLoadedItems[0].date;
     var todaysGroup = state.allLoadedItems.filter(function (x) { return x.date === mostRecentDate; });
@@ -187,6 +229,12 @@
     html += '<h2 class="detail-headline">' + escapeHtml(item.headline) + "</h2>";
     html += '<div class="detail-meta">' + escapeHtml(item.source_name || "") + (item.published_date ? " · " + escapeHtml(item.published_date) : "") + "</div>";
 
+    var st = statusOf(item.id);
+    html += '<div class="detail-status">' +
+      '<label class="status-check' + (st.created ? " on" : "") + '"><input type="checkbox" id="chk-created"' + (st.created ? " checked" : "") + "> ✅ I&#39;ve made a video on this</label>" +
+      '<label class="status-check' + (st.want ? " on" : "") + '"><input type="checkbox" id="chk-want"' + (st.want ? " checked" : "") + "> ⭐ I want to make a video on this</label>" +
+      "</div>";
+
     if (item.bullets && item.bullets.length) {
       html += '<section class="detail-section">' +
         '<div class="detail-section-head"><h3>📌 Key points</h3>' +
@@ -215,6 +263,23 @@
     var scriptBtn = content.querySelector('[data-copy="script"]');
     if (scriptBtn) scriptBtn.addEventListener("click", function () { copyText(item.script, scriptBtn); });
 
+    // Wire the status tick-boxes. Ticking either one permanently saves this
+    // story (with its bullets + script) to that list on this device.
+    var chkC = content.querySelector("#chk-created");
+    var chkW = content.querySelector("#chk-want");
+    if (chkC) chkC.addEventListener("change", function () {
+      setStatus(item.id, "created", chkC.checked, item);
+      chkC.parentNode.classList.toggle("on", chkC.checked);
+      updateViewButtons();
+      renderFeed();
+    });
+    if (chkW) chkW.addEventListener("change", function () {
+      setStatus(item.id, "want", chkW.checked, item);
+      chkW.parentNode.classList.toggle("on", chkW.checked);
+      updateViewButtons();
+      renderFeed();
+    });
+
     var overlay = document.getElementById("detail-overlay");
     overlay.style.display = "flex";
     document.body.style.overflow = "hidden";
@@ -226,8 +291,46 @@
     document.body.style.overflow = "";
   }
 
+  function cardHtml(item) {
+    var meta = CATEGORY_META[item.category] || { label: item.category, color: "#555" };
+    var hasScript = !!(item.script || (item.bullets && item.bullets.length));
+    var st = statusOf(item.id);
+    var cls = "card" + (hasScript ? " clickable" : "") + (st.created ? " is-created" : "") + (st.want ? " is-want" : "");
+    var flag = st.created ? '<span class="status-flag flag-created">✓ Created</span>'
+             : (st.want ? '<span class="status-flag flag-want">⭐ To create</span>' : "");
+    return '<div class="' + cls + '"' + (hasScript ? ' data-item-id="' + escapeHtml(item.id) + '"' : "") + ">" +
+      flag +
+      '<span class="badge" style="background:' + meta.color + '">' + meta.label + "</span>" +
+      '<div class="headline">' + escapeHtml(item.headline) + "</div>" +
+      '<div class="summary">' + escapeHtml(item.summary) + "</div>" +
+      (item.hook_angle ? '<div class="hook">🎬 ' + escapeHtml(item.hook_angle) + "</div>" : "") +
+      (hasScript ? '<div class="tap-cue">👉 Tap for bullet points &amp; 60-sec script</div>' : "") +
+      '<div class="meta">' +
+      (item.source_url ? '<a href="' + escapeHtml(item.source_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.source_name || "Source") + "</a>" : '<span>' + escapeHtml(item.source_name || "") + "</span>") +
+      '<span>' + escapeHtml(item.published_date || "") + "</span>" +
+      (item.developer_tags || []).map(function (t) { return '<span class="tag">' + escapeHtml(t) + "</span>"; }).join("") +
+      "</div></div>";
+  }
+
   function renderFeed() {
     var feed = document.getElementById("feed");
+
+    // Saved-list views ("Created" / "To create") render from the persistent
+    // store, ignoring the 3-month freshness filter so nothing is ever lost.
+    if (state.view === "created" || state.view === "want") {
+      var items = listItems(state.view);
+      var title = state.view === "created" ? "✅ Videos you've created" : "⭐ Videos to create";
+      if (items.length === 0) {
+        feed.innerHTML = '<div class="list-head">' + title + '</div>' +
+          '<div class="empty">Nothing here yet. Open a top pick, then tick the box inside to add it here.</div>';
+        return;
+      }
+      feed.innerHTML = '<div class="list-head">' + title + " (" + items.length + ")</div>" +
+        items.map(cardHtml).join("");
+      return;
+    }
+
+    // Normal feed view, grouped by day.
     var grouped = {};
     var order = [];
     state.allLoadedItems.forEach(function (x) {
@@ -237,8 +340,6 @@
     });
 
     // Within each day, order articles most-recent to oldest by published_date.
-    // Dates are ISO-ish strings, so descending string compare = newest first;
-    // less-specific dates (e.g. "2026-07" or "2026") naturally fall below exact days.
     order.forEach(function (dateStr) {
       grouped[dateStr].sort(function (a, b) {
         return (b.published_date || "").localeCompare(a.published_date || "");
@@ -253,21 +354,7 @@
     var html = "";
     order.forEach(function (dateStr) {
       html += '<div class="day-divider">' + fmtDayLabel(dateStr) + "</div>";
-      grouped[dateStr].forEach(function (item) {
-        var meta = CATEGORY_META[item.category] || { label: item.category, color: "#555" };
-        var hasScript = !!(item.script || (item.bullets && item.bullets.length));
-        html += '<div class="card' + (hasScript ? ' clickable' : '') + '"' + (hasScript ? ' data-item-id="' + escapeHtml(item.id) + '"' : '') + '>' +
-          '<span class="badge" style="background:' + meta.color + '">' + meta.label + "</span>" +
-          '<div class="headline">' + escapeHtml(item.headline) + "</div>" +
-          '<div class="summary">' + escapeHtml(item.summary) + "</div>" +
-          (item.hook_angle ? '<div class="hook">🎬 ' + escapeHtml(item.hook_angle) + "</div>" : "") +
-          (hasScript ? '<div class="tap-cue">👉 Tap for bullet points &amp; 60-sec script</div>' : "") +
-          '<div class="meta">' +
-          (item.source_url ? '<a href="' + escapeHtml(item.source_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.source_name || "Source") + "</a>" : '<span>' + escapeHtml(item.source_name || "") + "</span>") +
-          '<span>' + escapeHtml(item.published_date || "") + "</span>" +
-          (item.developer_tags || []).map(function (t) { return '<span class="tag">' + escapeHtml(t) + "</span>"; }).join("") +
-          "</div></div>";
-      });
+      grouped[dateStr].forEach(function (item) { html += cardHtml(item); });
     });
 
     var moreAvailable = state.loadedCount < state.dates.length;
@@ -284,6 +371,23 @@
     }
   }
 
+  function updateViewButtons() {
+    var c = 0, w = 0;
+    for (var id in store) { if (store[id].created) c++; if (store[id].want) w++; }
+    var cb = document.getElementById("btn-created");
+    var wb = document.getElementById("btn-want");
+    if (cb) { cb.textContent = "✅ Created (" + c + ")"; cb.classList.toggle("active", state.view === "created"); }
+    if (wb) { wb.textContent = "⭐ To create (" + w + ")"; wb.classList.toggle("active", state.view === "want"); }
+  }
+
+  function setView(v) {
+    state.view = v;
+    renderTopPicks();
+    renderFeed();
+    updateViewButtons();
+    window.scrollTo(0, 0);
+  }
+
   function setUpdatedLabel() {
     var el = document.getElementById("updated");
     if (state.dates.length === 0) { el.textContent = "No data yet"; return; }
@@ -296,13 +400,24 @@
         document.querySelectorAll(".pill").forEach(function (p) { p.classList.remove("active"); });
         pill.classList.add("active");
         state.activeFilter = pill.getAttribute("data-cat");
-        renderFeed();
+        if (state.view !== "feed") { setView("feed"); } else { renderFeed(); }
       });
     });
     document.getElementById("search").addEventListener("input", function (e) {
       state.searchTerm = e.target.value;
-      renderFeed();
+      if (state.view !== "feed") { setView("feed"); } else { renderFeed(); }
     });
+
+    // Top-of-page saved-list buttons: toggle into (or back out of) each list.
+    var createdBtn = document.getElementById("btn-created");
+    if (createdBtn) createdBtn.addEventListener("click", function () {
+      setView(state.view === "created" ? "feed" : "created");
+    });
+    var wantBtn = document.getElementById("btn-want");
+    if (wantBtn) wantBtn.addEventListener("click", function () {
+      setView(state.view === "want" ? "feed" : "want");
+    });
+    updateViewButtons();
     var refreshBtn = document.getElementById("refresh");
     if (refreshBtn) {
       refreshBtn.addEventListener("click", function () { refreshData(refreshBtn); });
