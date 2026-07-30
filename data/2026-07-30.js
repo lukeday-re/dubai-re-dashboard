@@ -157,6 +157,114 @@ window.RE_DATA["2026-07-30"] = {
       published_date: "2026-07-29",
       developer_tags: [],
       location_tags: ["Dubai", "UAE"]
+    },
+    {
+      id: "betterhomes-q2-2026-sales-cool-2026",
+      category: "market_data",
+      headline: "Dubai Q2 sales cool to AED84.9bn — but price per sqft keeps climbing",
+      summary: "Betterhomes' Q2 2026 Dubai residential report (published 20 July 2026) recorded 34,850 transactions worth AED84.9bn, down 31% and 45% year-on-year respectively — still the third-highest Q2 on record. Off-plan held 76% of sales (26,338 deals), price per sqft rose across most communities (Palm Jumeirah Garden Homes villas up 37% YoY), and tenant enquiries jumped 20% YoY even as extra supply gave renters more room to negotiate.",
+      hook_angle: "'Sales are down a third, but this Palm Jumeirah villa type is up 37%' — use betterhomes' Q2 data to show buyers where value is still rising.",
+      source_name: "betterhomes",
+      source_url: "https://www.bhomes.com/en/blog/market-reports/q2-2026-sales-cooled-to-aed849bn-but-prices-and-rents-kept-climbing",
+      published_date: "2026-07-20",
+      developer_tags: [],
+      location_tags: ["Dubai", "Palm Jumeirah"]
+    },
+    {
+      id: "bayut-abudhabi-h1-yields-2026",
+      category: "abu_dhabi",
+      headline: "Al Reef apartments post Abu Dhabi's best rental yields at 8.92% in H1 2026",
+      summary: "Bayut's H1 2026 Abu Dhabi report (published 29 July 2026) found Al Reef apartments delivering the capital's top ROI at 8.92%, ahead of Masdar City (7.63%) and Yas Island (5.94%). Saadiyat Island led price growth for ultra-luxury apartments and villas, while rents rose fastest in Shakhbout City (6.57%) and Khalifa City (6.53%).",
+      hook_angle: "'Forget Saadiyat — this affordable community has Abu Dhabi's best rental yield' — use Al Reef's 8.92% ROI to pitch buy-to-let investors.",
+      source_name: "Gulf News / Bayut",
+      source_url: "https://gulfnews.com/amp/story/business/corporate-news/bayut-h1-2026-report-shows-abu-dhabi-residential-markets-strong-investor-demand-1.500623508",
+      published_date: "2026-07-29",
+      developer_tags: [],
+      location_tags: ["Abu Dhabi", "Al Reef", "Saadiyat Island", "Yas Island"]
+    },
+    {
+      id: "rta-soft-mobility-plan-2026",
+      category: "infrastructure",
+      headline: "RTA's new 5-year plan links 25 more Dubai communities to transit by 2030",
+      summary: "RTA approved a five-year Soft Mobility Plan (announced 19 July 2026) adding 25 residential areas and 63 public transport stations to Dubai's walking/cycling network by 2030, taking the total to 34 connected areas. Cycling trips are already up 23% and e-scooter trips up 23% since 2024, with 89% pedestrian satisfaction recorded around upgraded stations.",
+      hook_angle: "'Is your community getting walkable transit links by 2030?' — check the RTA's new list against your listings.",
+      source_name: "The National / Dubai Media Office",
+      source_url: "https://www.thenationalnews.com/news/uae/2026/07/19/dubai-unveils-plan-to-boost-last-mile-public-transport-links-in-drive-to-cut-road-traffic/",
+      published_date: "2026-07-19",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "golden-visa-europe-doors-close-2026",
+      category: "market_drivers",
+      headline: "As Europe shuts its golden-visa doors, Dubai's AED2m property route stays wide open",
+      summary: "Analysis published 27 July 2026 notes Ireland (2023), Portugal (2023) and Spain (April 2025) have all closed property-based golden visa routes, while Dubai still grants a renewable 10-year residency for an AED2m property purchase, with dependants sponsorable. Dubai logged over 270,000 transactions worth AED917bn in 2025, including 500 sales above $10m — the most of any city globally.",
+      hook_angle: "'Portugal, Spain and Ireland just closed this door — Dubai didn't' — use Europe's golden-visa closures to reframe the AED2m residency route for international buyers.",
+      source_name: "National Law Review",
+      source_url: "https://natlawreview.com/press-releases/aed-2m-dubai-property-buys-10-year-golden-visa-europe-closes-its-doors",
+      published_date: "2026-07-27",
+      developer_tags: [],
+      location_tags: ["Dubai", "UAE"]
+    },
+    {
+      id: "binghatti-h1-2026-profit-815m",
+      category: "developer_launch",
+      headline: "Binghatti's profit jumps 64% to AED3bn on 1,700 handovers and 8 new launches",
+      summary: "Binghatti reported (27 July 2026) H1 2026 net profit up 64% year-on-year to AED3bn ($815m) on revenue of AED9.5bn (+50%), delivering 1,700 residential units and launching 8 new projects including Mercedes-Benz Places | Binghatti City and its first villa community, Tilal Binghatti. Its development backlog now tops AED44bn with nearly AED10bn in liquidity.",
+      hook_angle: "'This developer's profit jumped 64% while the wider market slowed 40%' — use Binghatti's numbers to talk clients through picking developers with real delivery track records.",
+      source_name: "AGBI",
+      source_url: "https://www.agbi.com/real-estate/2026/07/handovers-and-launches-send-binghatti-profit-above-800m/",
+      published_date: "2026-07-27",
+      developer_tags: ["Binghatti"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "nakheel-meraas-cbd-financing-2026",
+      category: "developer_launch",
+      headline: "New financing deal makes it easier to mortgage a Nakheel, Meraas or Dubai Properties home",
+      summary: "Dubai Holding Real Estate partnered with Commercial Bank of Dubai (announced 10 June 2026) to offer preferential financing — including early access at just 30% construction stage once 50% is paid — on off-plan and completed homes across Nakheel, Meraas and Dubai Properties, with both conventional and Islamic options and simplified approval for self-employed buyers.",
+      hook_angle: "'You can now get financing on a Nakheel or Meraas home at just 30% construction' — explain the new CBD scheme for buyers who thought they needed to wait longer.",
+      source_name: "Gulf Business",
+      source_url: "https://gulfbusiness.com/en/2026/real-estate/buying-a-nakheel-or-meraas-home-new-financing-programme-launched/",
+      published_date: "2026-06-10",
+      developer_tags: ["Nakheel", "Meraas", "Dubai Properties"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "etihad-rail-dubai-station-countdown-2026",
+      category: "infrastructure",
+      headline: "Etihad Rail confirms free luggage and a 4-minute metro link ahead of its September 30 Dubai debut",
+      summary: "Etihad Rail (announced 18 July 2026) confirmed passenger perks — two free luggage pieces per ticket, free Wi-Fi, USB charging at every seat and pet travel — ahead of its Dubai station opening at Jumeirah Golf Estates on 30 September 2026, connected to the Jumeirah Golf Estates Metro station by a four-minute footbridge. Over 10,000 tickets sold before the Abu Dhabi-Fujairah leg's launch alone.",
+      hook_angle: "'Dubai's first intercity train station opens in exactly 2 months' — countdown-style hook for your Jumeirah Golf Estates audience.",
+      source_name: "Travels Dubai",
+      source_url: "https://www.travelsdubai.com/18-Jul-2026/etihad-rail-unveils-passenger-benefits-ahead-dubai-station-launch",
+      published_date: "2026-07-18",
+      developer_tags: [],
+      location_tags: ["Dubai", "Jumeirah Golf Estates"]
+    },
+    {
+      id: "abu-dhabi-e20-highway-expansion-2026",
+      category: "abu_dhabi",
+      headline: "Abu Dhabi widens the E20 to 5 lanes and adds 4 bridges around Khalifa City and the airport",
+      summary: "Abu Dhabi's DMT announced (17 July 2026) an E20 highway expansion widening the road from 3 to 5 lanes each way, adding four new bridges, 10.5km of ramps and loops and eight signalised junctions around Khalifa City and Zayed International Airport, alongside 62km of stormwater drainage and 485 streetlights.",
+      hook_angle: "'Khalifa City is getting a 5-lane highway and 4 new bridges' — use the E20 expansion to talk up accessibility for buyers near the airport corridor.",
+      source_name: "Travels Dubai / DMT",
+      source_url: "https://www.travelsdubai.com/17-Jul-2026/abu-dhabi-expands-e20-highway-five-lane-upgrade-four-new-bridges",
+      published_date: "2026-07-17",
+      developer_tags: [],
+      location_tags: ["Abu Dhabi", "Khalifa City"]
+    },
+    {
+      id: "dubai-invite-800-tourism-incentive-2026",
+      category: "market_drivers",
+      headline: "Dubai is paying residents to bring visitors — $800 in perks per nominee through October",
+      summary: "Dubai launched 'A Dubai Invite' (reported 23 July 2026), letting residents nominate international visitors for benefits worth over $800 (AED3,000) — hotel stays, dining and attraction tickets — for arrivals between 20 July and 31 October 2026, after airline capacity into Dubai fell roughly 50% following the February 2026 Iran conflict. Dubai still logged 19.5 million overnight visitors in 2025, a third straight record year.",
+      hook_angle: "'Dubai is literally paying people to bring their friends' — explain what the tourism dip means for short-let landlords and why the city is fighting back.",
+      source_name: "Forbes",
+      source_url: "https://www.forbes.com/sites/maryroeloffs/2026/07/23/dubai-had-a-record-number-of-tourists-last-year-now-theyre-paying-people-to-visit/",
+      published_date: "2026-07-23",
+      developer_tags: [],
+      location_tags: ["Dubai", "UAE"]
     }
   ]
 };
