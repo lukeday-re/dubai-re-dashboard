@@ -157,6 +157,78 @@ window.RE_DATA["2026-08-04"] = {
       published_date: "2026-07-29",
       developer_tags: [],
       location_tags: ["Dubai", "Nad Al Sheba"]
+    },
+    {
+      id: "abu-dhabi-h1-2026-117bn-transactions",
+      category: "abu_dhabi",
+      headline: "Abu Dhabi real estate transactions more than doubled to Dh117bn in H1 2026",
+      summary: "Abu Dhabi recorded Dh117bn in real estate transactions in H1 2026 (reported 17 July 2026), up 112% year-on-year, with sales alone up 163.7% to Dh86.1bn across 16,838 deals. Foreign direct investment hit AED13.8bn, up 309%, from investors across 116 countries, as the emirate approved 8 new investment zones (50 total).",
+      hook_angle: "'Abu Dhabi transactions just MORE THAN DOUBLED' — a strong stat to open any Abu Dhabi-focused reel with.",
+      source_name: "Gulf News",
+      source_url: "https://gulfnews.com/business/property/abu-dhabi-records-dh117-billion-in-real-estate-transactions-during-h1-2026-1.500611665",
+      published_date: "2026-07-17",
+      developer_tags: [],
+      location_tags: ["Abu Dhabi"]
+    },
+    {
+      id: "dubai-ultra-luxury-296-sales-h1-2026",
+      category: "market_data",
+      headline: "Dubai logged a record 296 home sales above $10 million in H1 2026",
+      summary: "Dubai's ultra-luxury segment hit a new record in H1 2026 (reported 8 July 2026) with 296 home sales above $10 million, even as the broader market showed signs of cooling — driven by wealthy international buyers, developer launches targeting luxury, strong rental returns and Dubai's tax-efficient, lifestyle-hub appeal.",
+      hook_angle: "'296 homes sold for over $10 MILLION in six months' — a strong open for any luxury-market content.",
+      source_name: "PropertyNews.ae",
+      source_url: "https://propertynews.ae/uae/dubai/dubais-ultra-luxury-home-sales-exceed-10-million-mark-setting-new-record-in-h1-2026/",
+      published_date: "2026-07-08",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "dubai-fixed-mortgage-375pct-2026",
+      category: "market_drivers",
+      headline: "Dubai homebuyers rush to lock in fixed mortgages as rates drop to 3.75%",
+      summary: "UAE banks are offering fixed mortgage rates from 3.75% for one year (reported 17 June 2026), rising to roughly 3.95% for three years, prompting a rush among Dubai homebuyers to lock in rates and protect against future rate volatility rather than opt for variable-rate loans.",
+      hook_angle: "'Mortgage rates just dropped to 3.75%' — a timely explainer for anyone weighing fixed vs variable right now.",
+      source_name: "Khaleej Times",
+      source_url: "https://www.khaleejtimes.com/business/dubai-homebuyers-rush-to-lock-in-fixed-rate-mortgages-as-rates-drop-to-375",
+      published_date: "2026-06-17",
+      developer_tags: [],
+      location_tags: ["Dubai", "UAE"]
+    },
+    {
+      id: "bayut-rental-report-h1-2026",
+      category: "market_data",
+      headline: "Al Barari rents jumped 8.2% and Palm Jumeirah villas 9.6% in H1 2026 — Bayut's community breakdown",
+      summary: "Bayut's H1 2026 Dubai Rental Market Report (28 July 2026) found ultra-luxury community Al Barari's apartment rents up 8.22%, Palm Jumeirah 4-bed villas up 9.64%, Sobha Hartland up 6.45%, and Dubai South 3-bed villas up 5.27%, describing overall apartment rental trends as 'balanced and tenant-friendly'.",
+      hook_angle: "'Here's exactly which Dubai communities had the biggest rent rises this year' — a great community-by-community breakdown for landlords and tenants.",
+      source_name: "Bayut",
+      source_url: "https://www.bayut.com/mybayut/dubai-rental-market-report-h1-2026/",
+      published_date: "2026-07-28",
+      developer_tags: [],
+      location_tags: ["Dubai", "Al Barari", "Palm Jumeirah", "Sobha Hartland", "Dubai South"]
+    },
+    {
+      id: "knight-frank-durrani-stabilising-aug2026",
+      category: "market_drivers",
+      headline: "Knight Frank: UAE property investors can still exit at a profit despite regional conflict",
+      summary: "Speaking to CNBC on 1 August 2026, Knight Frank's head of MENA research Faisal Durrani said the UAE property market is stabilising as speculative activity recedes, and that investors can still exit their positions at a profit despite ongoing regional conflict.",
+      hook_angle: "'A top analyst just said you can still exit Dubai property at a profit' — reassurance content for nervous investors.",
+      source_name: "CNBC",
+      source_url: "https://www.cnbc.com/video/2026/08/01/uae-property-prices-stabilize-as-speculation-falls-researcher.html",
+      published_date: "2026-08-01",
+      developer_tags: [],
+      location_tags: ["Dubai", "Abu Dhabi", "UAE"]
+    },
+    {
+      id: "khaleej-times-offplan-investor-confidence-2026",
+      category: "market_drivers",
+      headline: "84% of global investors rate Dubai more attractive than rival markets for off-plan buys",
+      summary: "A survey reported by Khaleej Times (26 July 2026) found 84% of global investors see Dubai as more attractive than rival markets for off-plan investment, with capital growth (61%) and developer payment plans (54%) the top motivators. A separate analysis of 70,000+ off-plan resales since 2009 found a median gross flip gain of 9.1% after 19 months, or about 4.1% net of costs.",
+      hook_angle: "'84% of global investors say Dubai beats every rival market' — a strong stat for building investor confidence, plus a reality check on what flipping off-plan actually nets you.",
+      source_name: "Khaleej Times",
+      source_url: "https://www.khaleejtimes.com/business/property/84-of-global-investors-back-dubai-off-plan-property-market",
+      published_date: "2026-07-26",
+      developer_tags: [],
+      location_tags: ["Dubai"]
     }
   ]
 };
