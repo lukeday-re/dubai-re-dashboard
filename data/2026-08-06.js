@@ -229,6 +229,42 @@ window.RE_DATA["2026-08-06"] = {
       published_date: "2026-07-29",
       developer_tags: [],
       location_tags: ["Dubai", "Abu Dhabi"]
+    },
+    {
+      id: "rta-gold-line-prequalification-2026",
+      category: "infrastructure",
+      headline: "RTA opens prequalification for the AED34bn Gold Line — Dubai's first fully underground metro",
+      summary: "RTA issued a request for prequalification (reported 29 June 2026) to contractors for the Dubai Metro Gold Line, an AED34bn ($9.2bn) fully underground 18-station line stretching from Al Ghubaiba to Jumeirah Golf Estates, with bids due 17 August 2026 and an opening targeted for 9 September 2032; the line is projected to serve 1.5 million residents and connect to 55 major real estate developments.",
+      hook_angle: "'Dubai's newest metro line just went out to tender — AED34 billion' — good early-stage infrastructure hook for areas along the future Gold Line.",
+      source_name: "IndexBox / RTA",
+      source_url: "https://www.indexbox.io/blog/dubai-metro-gold-line-expansion-rta-issues-rfq-to-contractors/",
+      published_date: "2026-06-29",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "aldar-sustainable-city-yas-island-2026",
+      category: "abu_dhabi",
+      headline: "Aldar and Diamond Developers unveil The Sustainable City on Yas Island",
+      summary: "Aldar Properties, in joint venture with Diamond Developers, publicly unveiled (1 August 2026) The Sustainable City – Yas Island, a 397,000 sqm car-free community of 864 townhouses and apartments across 10 residential clusters plus 3,000 sqm of retail, built around solar power, biodomes and Estidama 3-Pearl community sustainability ratings, with handovers underway.",
+      hook_angle: "'Abu Dhabi's most sustainable community just got its big reveal' — a strong green-living angle for eco-conscious buyers.",
+      source_name: "PropertyNews.ae",
+      source_url: "https://propertynews.ae/uae/abu-dhabi/aldar-unveils-the-sustainable-city-yas-island-advancing-abu-dhabis-green-commitments/",
+      published_date: "2026-08-01",
+      developer_tags: ["Aldar"],
+      location_tags: ["Abu Dhabi", "Yas Island"]
+    },
+    {
+      id: "dld-area-price-divergence-jul2026",
+      category: "market_data",
+      headline: "Same month, opposite directions: Marina prices jump 16% while Business Bay slides",
+      summary: "A DLD open-data analysis (extracted 4 August 2026, transactions through 31 July) found Dubai Marina's price per sqft up 15.8% month-on-month on accelerating ready-home sales (+60.9% daily pace), while Business Bay's median price fell 22.6% and price per sqft dropped 11.3%; Dubai South stayed the volume leader with 2,357 sales, 96.5% off-plan.",
+      hook_angle: "'Two of Dubai's biggest areas moved in completely opposite directions last month' — great for explaining why 'the market' isn't one single number.",
+      source_name: "Palm Observer",
+      source_url: "https://www.palmobserver.com/dubai-real-estate/dubai-property-price-update-july-2026/",
+      published_date: "2026-08-04",
+      developer_tags: [],
+      location_tags: ["Dubai", "Business Bay", "Dubai Marina", "Dubai South"]
     }
   ]
 };
