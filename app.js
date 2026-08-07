@@ -122,6 +122,13 @@
     });
   }
 
+  // Load every remaining day file (used by the All Scripts library so it can
+  // show scripts from days that have scrolled past the 3-month feed window).
+  function loadAllDays() {
+    if (state.loadedCount >= state.dates.length) return Promise.resolve();
+    return loadNextBatch().then(loadAllDays);
+  }
+
   // Parse the loosely-formatted published_date into a Date.
   // "YYYY-MM-DD" -> that day; "YYYY-MM" -> last day of that month;
   // "YYYY" -> Dec 31 of that year; anything unrecognised -> null (kept, not hidden).
@@ -323,6 +330,25 @@
   function renderFeed() {
     var feed = document.getElementById("feed");
 
+    // All Scripts library: every item that has a script, across all days,
+    // straight from the repo — ignores the 3-month filter and does not depend
+    // on local storage, so no script we've made is ever lost from view.
+    if (state.view === "scripts") {
+      var seen = {};
+      var scripted = [];
+      state.allLoadedItems.forEach(function (x) {
+        if (x.item.script && !seen[x.item.id]) { seen[x.item.id] = 1; scripted.push(x); }
+      });
+      scripted.sort(function (a, b) { return b.date.localeCompare(a.date); });
+      if (scripted.length === 0) {
+        feed.innerHTML = '<div class="list-head">📚 All scripts</div><div class="empty">No scripts found yet.</div>';
+        return;
+      }
+      feed.innerHTML = '<div class="list-head">📚 Every script we\'ve created (' + scripted.length + ')</div>' +
+        scripted.map(function (x) { return cardHtml(x.item); }).join("");
+      return;
+    }
+
     // Saved-list views ("Created" / "To create") render from the persistent
     // store, ignoring the 3-month freshness filter so nothing is ever lost.
     if (state.view === "created" || state.view === "want") {
@@ -384,8 +410,10 @@
     for (var id in store) { if (store[id].created) c++; if (store[id].want) w++; }
     var cb = document.getElementById("btn-created");
     var wb = document.getElementById("btn-want");
+    var sb = document.getElementById("btn-scripts");
     if (cb) { cb.textContent = "✅ Created (" + c + ")"; cb.classList.toggle("active", state.view === "created"); }
     if (wb) { wb.textContent = "⭐ To create (" + w + ")"; wb.classList.toggle("active", state.view === "want"); }
+    if (sb) { sb.classList.toggle("active", state.view === "scripts"); }
   }
 
   function setView(v) {
@@ -424,6 +452,15 @@
     var wantBtn = document.getElementById("btn-want");
     if (wantBtn) wantBtn.addEventListener("click", function () {
       setView(state.view === "want" ? "feed" : "want");
+    });
+    var scriptsBtn = document.getElementById("btn-scripts");
+    if (scriptsBtn) scriptsBtn.addEventListener("click", function () {
+      if (state.view === "scripts") { setView("feed"); return; }
+      scriptsBtn.textContent = "📚 Loading…";
+      loadAllDays().then(function () {
+        scriptsBtn.textContent = "📚 All scripts";
+        setView("scripts");
+      });
     });
     updateViewButtons();
     var refreshBtn = document.getElementById("refresh");
