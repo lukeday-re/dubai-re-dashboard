@@ -182,6 +182,14 @@
   }
 
   function findItemById(id) {
+    // Check the persisted snapshot first: once a story is flagged created/want,
+    // its bullets + script are frozen in localStorage forever, independent of
+    // whether that day's data file happens to be loaded right now or the story
+    // has aged past the 3-month freshness cutoff. Without this, tapping a card
+    // in the Created/To-create lists could silently do nothing once the source
+    // day scrolled out of the loaded feed.
+    var saved = store[id];
+    if (saved && saved.item) return saved.item;
     for (var i = 0; i < state.allLoadedItems.length; i++) {
       if (state.allLoadedItems[i].item.id === id) return state.allLoadedItems[i].item;
     }
