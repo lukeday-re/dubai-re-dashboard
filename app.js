@@ -203,6 +203,9 @@
     return null;
   }
 
+  // Expose the lookup so the Script Studio (studio.js) can resolve a story by id.
+  window.MWfindItem = findItemById;
+
   // Copy plain text to the clipboard, with a fallback for older browsers, and
   // give quick "Copied!" feedback on the button that was pressed.
   function copyText(text, btn) {
@@ -320,6 +323,7 @@
       '<div class="summary">' + escapeHtml(item.summary) + "</div>" +
       (item.hook_angle ? '<div class="hook">🎬 ' + escapeHtml(item.hook_angle) + "</div>" : "") +
       (hasScript ? '<div class="tap-cue">👉 Tap for bullet points &amp; 60-sec script</div>' : "") +
+      '<button class="gen-script-btn" type="button" data-gen-id="' + escapeHtml(item.id) + '">🎬 Generate shot list</button>' +
       '<div class="meta">' +
       (item.source_url ? '<a href="' + escapeHtml(item.source_url) + '" target="_blank" rel="noopener">' + escapeHtml(item.source_name || "Source") + "</a>" : '<span>' + escapeHtml(item.source_name || "") + "</span>") +
       '<span>' + escapeHtml(item.published_date || "") + "</span>" +
@@ -472,6 +476,7 @@
     // (top picks and any feed item that has a script). Ignore clicks on links.
     function cardClickHandler(e) {
       if (e.target.closest("a")) return;
+      if (e.target.closest(".gen-script-btn")) return; // Script Studio handles this
       var card = e.target.closest("[data-item-id]");
       if (!card) return;
       var item = findItemById(card.getAttribute("data-item-id"));

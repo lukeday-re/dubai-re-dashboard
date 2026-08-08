@@ -20,7 +20,11 @@
 <header>
   <div class="header-row">
     <h1>Dubai &amp; Abu Dhabi Real Estate</h1>
-    <button id="refresh" class="refresh-btn" type="button">🔄 Refresh</button>
+    <div class="header-btns">
+      <button id="btn-produced" class="icon-btn" type="button" title="Produced archive">🎥</button>
+      <button id="btn-settings" class="icon-btn" type="button" title="Settings / API key">⚙️</button>
+      <button id="refresh" class="refresh-btn" type="button">🔄 Refresh</button>
+    </div>
   </div>
   <div class="updated" id="updated">Loading...</div>
   <div class="view-tabs">
@@ -50,6 +54,28 @@
   </div>
 </div>
 
-<script src="app.js?v=8"></script>
+<div id="studio-overlay" class="detail-overlay" style="display:none">
+  <div class="detail-panel studio-panel">
+    <button id="studio-close" class="detail-close" type="button" aria-label="Close">✕</button>
+    <div id="studio-content"></div>
+  </div>
+</div>
+
+<div id="settings-overlay" class="detail-overlay" style="display:none">
+  <div class="detail-panel settings-panel">
+    <button id="settings-close" class="detail-close" type="button" aria-label="Close">✕</button>
+    <div id="settings-content"></div>
+  </div>
+</div>
+
+<div id="archive-overlay" class="detail-overlay" style="display:none">
+  <div class="detail-panel studio-panel">
+    <button id="archive-close" class="detail-close" type="button" aria-label="Close">✕</button>
+    <div id="archive-content"></div>
+  </div>
+</div>
+
+<script src="app.js?v=9"></script>
+<script src="studio.js?v=1"></script>
 </body>
 </html>
