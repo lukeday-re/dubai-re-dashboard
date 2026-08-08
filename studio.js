@@ -5,7 +5,7 @@
   "use strict";
 
   var MODEL = "claude-sonnet-4-6";
-  var MAX_TOKENS = 4000;
+  var MAX_TOKENS = 8000; // a full 15-20 shot list + captions overruns 4000 tokens
   var API_URL = "https://api.anthropic.com/v1/messages";
   var ANTHROPIC_VERSION = "2023-06-01";
 
@@ -179,7 +179,15 @@
         if (data.stop_reason === "refusal") throw new Error("The model declined this request.");
         var block = (data.content || []).filter(function (b) { return b.type === "text"; })[0];
         if (!block) throw new Error("Empty response from the model.");
-        return extractJson(block.text);
+        if (data.stop_reason === "max_tokens") {
+          throw new Error("The script was cut off at the length limit — please hit Generate again.");
+        }
+        try {
+          return extractJson(block.text);
+        } catch (e) {
+          console.warn("Raw model output that failed to parse:", block.text);
+          throw new Error("The model returned malformed JSON (usually a length cut-off). Please try Generate again.");
+        }
       });
     });
   }
