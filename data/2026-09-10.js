@@ -1,0 +1,258 @@
+window.RE_DATA = window.RE_DATA || {};
+window.RE_DATA["2026-09-10"] = {
+  top_picks: ["aldar-sei-saadiyat-launch-sep2026", "dubai-palm-jumeirah-villa-260m-sep2026", "alabbar-dubai-2027-balance-adjustment-sep2026", "dld-initial-registration-ai-platform-sep2026"],
+  items: [
+    {
+      id: "aldar-sei-saadiyat-launch-sep2026",
+      category: "abu_dhabi",
+      headline: "Aldar unveils Sei Saadiyat — a 778-home 'wellness island' with sales opening in a week",
+      summary: "Aldar launched Sei Saadiyat (7 September 2026), a wellness-focused residential development of 778 homes across six buildings in Abu Dhabi's Saadiyat Cultural District, with the first phase of 265 homes going on sale from 16 September 2026. The project introduces two-bedroom lofts to Aldar's portfolio alongside one-, two- and three-bedroom apartments, built around wellness amenities including hot/cold garden pools, a Zen garden and three indoor gyms.",
+      hook_angle: "'Sales open in exactly one week' — a countdown hook for Saadiyat-curious buyers wrapped in a wellness-living angle.",
+      bullets: [
+        "Aldar just unveiled Sei Saadiyat — 778 homes across 6 buildings on Saadiyat Island",
+        "Phase 1 releases 265 homes across 2 buildings — sales open 16 September",
+        "'Sei' means stillness and calm in Japanese — wellness is the whole concept",
+        "New for Aldar: 2-bedroom loft apartments with double-height living spaces",
+        "Amenities: hot/cold garden pools, a Zen garden, 3 indoor gyms, a private clinic, cinema rooms",
+        "Steps from the Louvre Abu Dhabi, Natural History Museum and Saadiyat Grove"
+      ],
+      script: "Right, if you know anyone who wants their next home to feel like a permanent spa day, listen up. Aldar just unveiled Sei Saadiyat, a brand new wellness-focused community on Saadiyat Island — seven hundred and seventy-eight homes across six buildings, with the first phase of two hundred and sixty-five homes going on sale in exactly one week, the sixteenth of September. The name Sei literally means stillness and calm in Japanese, and honestly, they've committed to the bit — think garden-based hot and cold pools, a Zen garden with its own serenity pool, three indoor gyms, outdoor yoga decks, even a private clinic and cinema rooms. There's also a brand new format for Aldar, two-bedroom lofts with proper double-height ceilings. And the location does half the selling for you — walking distance to the Louvre Abu Dhabi, the Natural History Museum and Saadiyat Grove. Mark the sixteenth, because this one's going to move fast.",
+      source_name: "Zawya / Aldar",
+      source_url: "https://www.zawya.com/en/press-release/companies-news/aldar-unveils-sei-saadiyat-bringing-timeless-design-to-saadiyat-cultural-district-480019",
+      published_date: "2026-09-07",
+      developer_tags: ["Aldar"],
+      location_tags: ["Abu Dhabi", "Saadiyat Island", "Saadiyat Cultural District"]
+    },
+    {
+      id: "dubai-palm-jumeirah-villa-260m-sep2026",
+      category: "market_data",
+      headline: "A Palm Jumeirah villa just sold for Dh260 million — and its neighbour was mortgaged for Dh130 million",
+      summary: "A six-bedroom villa in the Ayumi project on Palm Jumeirah sold for Dh260 million (reported 5 September 2026), spanning roughly 26,550 sq ft at Dh9,792 per sq ft. A second villa in the same development was separately mortgaged for Dh130 million the same week.",
+      hook_angle: "'Dh260 million for one villa' — a single jaw-dropping number to open a luxury-market video.",
+      bullets: [
+        "A 6-bed villa on Palm Jumeirah's Ayumi project just sold for Dh260 million",
+        "That's roughly 26,550 sq ft — Dh9,792 per square foot",
+        "Same week, a second villa in the same project was mortgaged for Dh130 million",
+        "Combined, that's Dh390 million moving through just one small development",
+        "Signals ultra-luxury demand on the Palm hasn't slowed down this September",
+        "Ayumi joins a growing list of branded, ultra-prime Palm Jumeirah addresses"
+      ],
+      script: "September on Palm Jumeirah opened with an absolutely mental number: two hundred and sixty million dirhams, for one villa. It's a six-bedroom home in the Ayumi project, roughly twenty-six thousand five hundred square feet, which works out to about nine thousand, seven hundred and ninety-two dirhams per square foot — for context, that's more than double what most prime Palm villas trade at. And it wasn't a one-off. Days later, a second villa in that same development was mortgaged for a hundred and thirty million dirhams. Put those two together and you've got three hundred and ninety million dirhams moving through a single small project in the space of a week. If you've been wondering whether Dubai's ultra-luxury buyers are pulling back at all this year, this is your answer — they're not even slowing down to catch their breath. Palm Jumeirah remains the address everyone with real money wants.",
+      source_name: "PropertyNews.ae",
+      source_url: "https://propertynews.ae/uae/dubai/dubais-luxury-property-market-commences-september-with-dh260-million-palm-jumeirah-villa-sale/",
+      published_date: "2026-09-05",
+      developer_tags: [],
+      location_tags: ["Dubai", "Palm Jumeirah"]
+    },
+    {
+      id: "alabbar-dubai-2027-balance-adjustment-sep2026",
+      category: "market_drivers",
+      headline: "Emaar's own founder just predicted Dubai prices could drop 5-10%",
+      summary: "Emaar founder Mohamed Alabbar said (reported 7 September 2026) that Dubai property prices could decline 5-10% due to the regional conflict, calling it an 'adjustment' rather than a crisis, while predicting a 'nice balance' for the market in 2027 as new supply lands. Emaar is holding pricing without discounts despite rivals cutting up to 50%, while pressing ahead with a Dh200 billion mega-project for 150,000 residents.",
+      hook_angle: "'The man who built Emaar says prices could fall' — a contrarian, highly shareable insider-prediction hook.",
+      bullets: [
+        "Emaar founder Mohamed Alabbar predicts a 'nice balance' for Dubai property in 2027",
+        "He says prices could dip 5-10% due to the regional conflict — calls it 'adjustment,' not crisis",
+        "Meanwhile competitors are already discounting up to 50% — Emaar refuses to",
+        "Emaar currently has 90,000 units in production across 18 global markets",
+        "Alabbar is still launching Emaar's biggest ever project: a Dh200 billion city for 150,000 people",
+        "His view: crises last 2-3 years — now's the time to expand, not retreat"
+      ],
+      script: "Okay, this one's worth paying attention to, because it's not some random analyst talking, it's Mohamed Alabbar, the man who built Emaar. He's just said publicly that Dubai property prices could actually drop five to ten percent because of the regional conflict — but he was quick to say that's not a crisis, it's what he calls 'adjustment time.' Some developers are already discounting by up to fifty percent to keep sales moving. Emaar isn't one of them — no discounts, because they're sitting on ninety thousand units in production across eighteen countries and a rock-solid balance sheet. And here's the kicker — while everyone else is nervous, Alabbar's using this exact moment to launch Emaar's biggest project ever, a two-hundred-billion-dirham city built for a hundred and fifty thousand people. His logic? Crises last two or three years, so this is exactly when smart money expands. Food for thought next time a client asks if now's a good time to buy.",
+      source_name: "The National",
+      source_url: "https://www.thenationalnews.com/business/property/2026/09/07/emaars-alabbar-predicts-nice-balance-for-dubai-property-market-amid-supply-boost-and-easing-prices/",
+      published_date: "2026-09-07",
+      developer_tags: ["Emaar"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "dld-initial-registration-ai-platform-sep2026",
+      category: "infrastructure",
+      headline: "Dubai just handed real estate registration over to AI",
+      summary: "Dubai Land Department launched 'Initial Registration' (3-4 September 2026), an AI-powered platform unifying project registration, transaction registration and escrow account management for developers, with AI that auto-reads Emirates IDs, passports and sales contracts, plus a new 'Project 360' dashboard for real-time unit and escrow status.",
+      hook_angle: "'Dubai just automated real estate paperwork with AI' — a practical efficiency story for anyone dealing with developer registrations.",
+      bullets: [
+        "DLD launched 'Initial Registration' — one AI platform for project, transaction & escrow registration",
+        "The AI reads Emirates IDs, passports and sales contracts automatically to fill in applications",
+        "New 'Project 360' dashboard shows developers unit status, escrow funds and early-warning flags",
+        "One login can now manage multiple companies with custom permission levels",
+        "Goal: qualifying transactions could be approved the moment they're submitted",
+        "Launched at a Grand Hyatt Dubai ceremony, part of Dubai's push for AI-run government services"
+      ],
+      script: "Paperwork just got a whole lot less painful in Dubai real estate. The Land Department has launched 'Initial Registration,' a single AI-powered platform that rolls project registration, transaction registration and escrow account management into one system for developers. The AI actually reads Emirates IDs, passports and sales contracts and fills in the application for you — no more manual data entry. There's also a new dashboard called Project 360 that gives developers a live view of unit status, escrow accounts and early-warning flags, all in one place, and one login can now manage several companies at once. The goal, according to DLD's Abdullah Al Shehi, is to speed things up so much that qualifying transactions could be approved the moment they're submitted. It's part of a bigger push too — Sheikh Mohammed wants half of Dubai's government services running on autonomous AI within two years, and real estate registration just became the latest example.",
+      source_name: "Gulf News / Biz Today",
+      source_url: "https://gulfnews.com/amp/story/business/property/dubai-land-department-launches-ai-powered-platform-to-speed-up-real-estate-registration-for-developers-1.500662918",
+      published_date: "2026-09-04",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "abudhabi-war-defying-surge-117bn-h1-2026",
+      category: "abu_dhabi",
+      headline: "Abu Dhabi property sales hit Dh117 billion in H1 — up 112% despite the region's conflict",
+      summary: "Abu Dhabi recorded Dh117 billion in real estate transactions in H1 2026 (reported 2 September 2026), up 112% year-on-year, with residential sales up 178% to Dh70.4bn. Foreign investment reached Dh13.8bn (up 309%) from buyers across 116 nationalities, and 71,000 more residential units are expected by 2030.",
+      hook_angle: "'Abu Dhabi property is having its moment despite regional conflict' — a resilience story for AD-curious clients.",
+      source_name: "AGBI",
+      source_url: "https://www.agbi.com/real-estate/2026/09/inside-abu-dhabis-war-defying-property-surge/",
+      published_date: "2026-09-02",
+      developer_tags: [],
+      location_tags: ["Abu Dhabi"]
+    },
+    {
+      id: "dubai-8month-transactions-523bn-sep2026",
+      category: "market_data",
+      headline: "Dubai has already done Dh523 billion in property deals — with 4 months still to go",
+      summary: "Dubai real estate transactions reached Dh523.44 billion across 148,564 deals from January to August 2026 (reported 1 September 2026) — already 57% of all of 2025's Dh919bn total. Sales made up Dh349.83bn, split between Dh180.05bn in ready properties and Dh169.77bn off-plan, with mortgages adding Dh134.34bn.",
+      hook_angle: "A simple 'we're already past halfway to beating last year' stat for market-momentum content.",
+      source_name: "Voice of Emirates / DLD",
+      source_url: "https://www.voiceofemirates.com/en/business/business-reports/2026/09/01/sales-recorded-349-83-billion-dirhams-aed-523-44-billion-in-dubai-real-estate-transactions-in-8-months/",
+      published_date: "2026-09-01",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "dubai-august-2026-market-report-2793bn",
+      category: "market_data",
+      headline: "Dubai's rental market quietly did more deals in August than the sales market",
+      summary: "Dubai recorded Dh27.93 billion across 40,154 transactions in August 2026 (reported 2 September 2026), with 28,702 new residential lease contracts (71% of all transactions) worth Dh2.96bn, while off-plan sales captured 59% of total value despite being a smaller share of deal count. 577 projects totalling 146,165 units are due for completion in 2027.",
+      hook_angle: "A 'volume vs value' contrast — rentals dominate deal count, off-plan dominates the money — good explainer content.",
+      source_name: "White & Co",
+      source_url: "https://whiteandcogroup.com/about-us/latest-property-news/dubai-real-estate-market-report-august-2026/",
+      published_date: "2026-09-02",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "ips2026-robotics-home-treppan-vision-sep2026",
+      category: "developer_launch",
+      headline: "A Dubai developer just unveiled a Dh700 million home built around actual robots",
+      summary: "Fakhruddin Properties unveiled Tréppan Vision at IPS 2026 (7 September 2026), a Dh700 million mixed-use development in Dubai centred on robotics, AI-enabled homes and wellness and sustainability systems. CEO Yousuf Fakhruddin said the project integrates 'whatever is out there' that supports wellbeing, technology and lifestyle.",
+      hook_angle: "'This new Dubai home comes with actual robots' — a fun, visual, easily-clipped hook.",
+      source_name: "Gulf News",
+      source_url: "https://gulfnews.com/business/property/ips-2026-opens-in-dubai-with-robotics-unveiling-and-a-rush-of-deal-making-1.500666254",
+      published_date: "2026-09-07",
+      developer_tags: ["Fakhruddin Properties"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "ips2026-danube-11projects-11months-sep2026",
+      category: "developer_launch",
+      headline: "Danube just pledged to deliver 11 projects in 11 months",
+      summary: "At IPS 2026 (7 September 2026), Danube Properties offered a 10% discount on top of its 20% payment plan and pledged to deliver 11 projects within 11 months. Founder Rizwan Sajan said: 'This is the right time for people to buy from Danube.'",
+      hook_angle: "A bold, countable pledge — '11 projects, 11 months' is an easy stat to build a short video around.",
+      source_name: "Gulf News",
+      source_url: "https://gulfnews.com/business/property/ips-2026-opens-in-dubai-with-robotics-unveiling-and-a-rush-of-deal-making-1.500666254",
+      published_date: "2026-09-07",
+      developer_tags: ["Danube Properties"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "ips2026-dld-roadmap-2033-sep2026",
+      category: "market_drivers",
+      headline: "Dubai Land Department just outlined its roadmap all the way to 2033",
+      summary: "At IPS 2026, which drew over 30,000 participants and 300+ exhibitors to Dubai World Trade Centre (7-9 September 2026), the Dubai Land Department outlined a roadmap spanning 2026 to 2033 covering investor outlooks, financing frameworks and governance.",
+      hook_angle: "A 'they're planning 7 years ahead' data point — useful for framing Dubai's long-term market confidence.",
+      source_name: "Gulf News",
+      source_url: "https://gulfnews.com/business/property/ips-2026-opens-in-dubai-with-robotics-unveiling-and-a-rush-of-deal-making-1.500666254",
+      published_date: "2026-09-07",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "etihad-rail-dubai-launch-sep30-2026",
+      category: "infrastructure",
+      headline: "Dubai's first-ever train station opens to the public in 3 weeks",
+      summary: "Etihad Rail confirmed (reported 31 August 2026) that its Dubai station, Al Yalayis at Jumeirah Golf Estates, along with Al Dhaid station, opens to passengers on 30 September 2026, connecting Abu Dhabi's Mohamed bin Zayed City to Dubai in roughly 57 minutes. Over 70,000 tickets have already been sold during the pre-operational phase.",
+      hook_angle: "A countdown hook — Dubai's first national rail station opens in three weeks.",
+      source_name: "Gulf News / Zawya",
+      source_url: "https://gulfnews.com/living-in-uae/ask-us/uae-september-2026-new-etihad-rail-route-tax-changes-and-key-dates-to-know-1.500657564",
+      published_date: "2026-08-31",
+      developer_tags: [],
+      location_tags: ["Dubai", "Jumeirah Golf Estates"]
+    },
+    {
+      id: "dubai-hotel-rates-175pct-september-2026",
+      category: "market_drivers",
+      headline: "Dubai hotel rates near World Trade Centre just jumped 175% for September",
+      summary: "Hotel rates near Dubai World Trade Centre climbed as much as 175% for September 2026 dates (reported 6 September 2026) — Novotel DWTC rose from Dh300 to Dh825 — as a packed exhibition calendar including IPS, GISEC and Seamless Middle East concentrates business travel demand, with citywide occupancy expected at 75-85%.",
+      hook_angle: "A vivid 'hotel prices just nearly tripled' stat that signals just how busy Dubai's property-adjacent events season is.",
+      source_name: "Khaleej Times",
+      source_url: "https://www.khaleejtimes.com/uae/dubai-hotel-rates-jump-september-events-drive-demand",
+      published_date: "2026-09-06",
+      developer_tags: [],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "abudhabi-occupancy-certificate-deadline-sep16-2026",
+      category: "abu_dhabi",
+      headline: "Abu Dhabi landlords have until September 16 to get this certificate — or face a Dh1 million fine",
+      summary: "Abu Dhabi's Department of Municipalities and Transport set a deadline of 16 September 2026 for property owners and operators to apply for or renew occupancy certificates, covering structural, fire safety, gas and HVAC compliance. Non-compliance risks fines up to Dh1 million and a block on new lease registrations.",
+      hook_angle: "A hard deadline this month with a real penalty — actionable content for AD landlords and property managers.",
+      source_name: "DMT Abu Dhabi",
+      source_url: "https://www.dmt.gov.ae/en/Media-Centre/News/DMT-Grants-Grace-Period-to-Comply-with-Occupancy-Certificate-Rules",
+      published_date: "2026-08-05",
+      developer_tags: [],
+      location_tags: ["Abu Dhabi"]
+    },
+    {
+      id: "binghatti-partnership-talks-ipo-shelved-sep2026",
+      category: "developer_launch",
+      headline: "Binghatti shelved its IPO — and is now talking multibillion-dollar partnerships instead",
+      summary: "Binghatti Holding is in talks on potential multibillion-dollar partnerships with 'reputable master developers' and has suspended its IPO plans, chairman Muhammad Binghatti told Bloomberg (reported 1 September 2026), describing discussions centred on joint ventures rather than a stake sale.",
+      hook_angle: "A surprising pivot — from IPO to major joint ventures — good for 'what's really happening behind the scenes' content.",
+      source_name: "Bloomberg",
+      source_url: "https://www.bloomberg.com/news/articles/2026-09-01/dubai-developer-binghatti-in-talks-on-multibillion-dollar-pact",
+      published_date: "2026-09-01",
+      developer_tags: ["Binghatti"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "sobha-realty-6819-handovers-record-2026",
+      category: "developer_launch",
+      headline: "Sobha is about to hand over more homes this year than ever before",
+      summary: "Sobha Realty is targeting a record 6,819 residential handovers across Dubai in 2026 (reported 23 July 2026), worth roughly Dh21.6 billion, spanning Sobha Hartland, Sobha Hartland II, Sobha Reserve, Sobha One and Verde by Sobha — its largest annual delivery pipeline to date.",
+      hook_angle: "A 'biggest handover year ever' stat, useful for framing Hartland-area supply and resale/rental inventory.",
+      source_name: "Khaleej Times / Zawya",
+      source_url: "https://www.khaleejtimes.com/business/property/sobha-realty-targets-record-6819-home-handovers-in-dubai-as-delivery-focus-sharpens",
+      published_date: "2026-07-23",
+      developer_tags: ["Sobha Realty"],
+      location_tags: ["Dubai"]
+    },
+    {
+      id: "union-properties-2bn-motorcity-community-2026",
+      category: "developer_launch",
+      headline: "Union Properties is planning a Dh2 billion community after its revenue jumped 68%",
+      summary: "Union Properties reported H1 2026 revenue of Dh529.3 million (up 68% year-on-year, reported 24 July 2026) and is progressing a new Dh2 billion residential master development of roughly 167 townhouses, villas and bungalows, currently in the approval and permitting stage.",
+      hook_angle: "A turnaround story — a once-troubled developer clearing debt and now planning a new community — good for a 'comeback' narrative.",
+      source_name: "Gulf News",
+      source_url: "https://gulfnews.com/business/property/union-properties-plans-dh2-billion-dubai-home-community-after-68-revenue-jump-1.500618532",
+      published_date: "2026-07-24",
+      developer_tags: ["Union Properties"],
+      location_tags: ["Dubai", "Motor City"]
+    },
+    {
+      id: "almaktoum-airport-apm-contract-560m-2026",
+      category: "infrastructure",
+      headline: "Al Maktoum Airport's new automated train will be the biggest of its kind on Earth",
+      summary: "A consortium of Mitsubishi Heavy Industries and India's L&T won a contract worth up to $560 million (reported 20-21 August 2026) to build a 50km, nine-station automated people mover at Al Maktoum International Airport — set to be the world's largest airport APM, using 165 driverless vehicles, completing December 2031.",
+      hook_angle: "'World's largest' superlative plus a striking visual (driverless trains under a mega-airport) — easy to make compelling.",
+      source_name: "The National / ENR",
+      source_url: "https://www.thenationalnews.com/news/uae/2026/08/21/dubais-al-maktoum-airport-set-for-50km-driverless-rail-network-to-carry-passengers/",
+      published_date: "2026-08-21",
+      developer_tags: [],
+      location_tags: ["Dubai", "Al Maktoum Airport", "Dubai South"]
+    },
+    {
+      id: "deyaar-h1-2026-profit-336m-2026",
+      category: "market_data",
+      headline: "Deyaar's profit jumped 26% in H1 — and it delivered 1,425 homes in Q1 alone",
+      summary: "Deyaar Development reported H1 2026 net profit before tax of Dh336.1 million (up 26%, reported 4 August 2026), with revenue up 3% to Dh952.6 million. The developer handed over 1,425 residential units in Q1 alone across Regalia in Business Bay, the final district of Jannat in Midtown and Talia Residences in Al Furjan.",
+      hook_angle: "A steady, less-hyped developer quietly delivering real numbers — good counterpoint to mega-launch headlines.",
+      source_name: "Zawya",
+      source_url: "https://www.zawya.com/en/press-release/deyaar-reports-steady-growth-in-h1-2026-with-net-profit-before-tax-of-aed-336.1mln-420018",
+      published_date: "2026-08-04",
+      developer_tags: ["Deyaar"],
+      location_tags: ["Dubai", "Business Bay", "Midtown", "Al Furjan"]
+    }
+  ]
+};
